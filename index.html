@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>horoscope</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main>
+        <div class="form-wrapper">
+            <h1>Your Daily Horoscope</h1>
+            <form action="" id="form" method="POST">
+
+                <div>
+                    <div>
+                        <label for="sign-select">What is your sign?</label>
+                    </div>
+                    <select id="sign-select" name="sign-select">
+                        <!--  I think I can just populate this as a list from js"			 -->
+                        <!-- <option value="mint chocolate chip">Mint Chocolate Chip</option> -->
+                    </select>
+                </div>
+            
+                <!-- button place order, can also be an input tag with type submit : )  -->
+                <button type="submit" id="submit-button">Place Order</button>
+            </form>
+
+        </div>     
+    </main>
+<script src="js/index.js" type="module"></script>
+</body>
+</html>
