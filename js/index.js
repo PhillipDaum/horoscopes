@@ -6,7 +6,8 @@ let dataWeWant = horoscopeData.horoscopes.astroSigns;
 // populates HTML form with options
 for (let item of dataWeWant) {
 	let makeOption = document.createElement('option');
-	makeOption.innerHTML = item.sign; 
+	makeOption.innerHTML = item.sign;
+	makeOption.value = item.sign;
 	document.getElementById('sign-select').appendChild(makeOption);
 
 }
