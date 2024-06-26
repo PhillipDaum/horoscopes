@@ -1,42 +1,46 @@
 // imports data from
 import horoscopeData from "../data/data.js";
 // declares variable that makes moving around data object easier
-let dataWeWant = horoscopeData.horoscopes.astroSigns;
+const dataWeWant = horoscopeData.horoscopes.astroSigns;
+// decleares variable that will hold all of the user's data
+let horoscope = "";
+// adds submit functionality
+form.addEventListener("submit", onFormSubmit);
 
 // populates HTML form with options
-for (let item of dataWeWant) {
-	let makeOption = document.createElement('option');
-	makeOption.innerHTML = item.sign;
-	makeOption.value = item.sign;
-	document.getElementById('sign-select').appendChild(makeOption);
+for (let i = 0; i < dataWeWant.length; i++) {
+	let option = document.createElement('option');
+	option.innerHTML = dataWeWant[i].sign;
+	option.value = dataWeWant[i].sign;
+	option.className = dataWeWant[i].sign;
+	option.id = i;
+	document.getElementById('sign').appendChild(option);
+}
 
+// submits form data, pushes to user's array
+function onFormSubmit(event) {
+	event.preventDefault();
+	const data = new FormData(event.target);
+	const dataObject = Object.fromEntries(data.entries());
+	let key = dataObject.sign;
+	let door = document.querySelector(`.${key}`);
+	let open = door.id;
+	horoscope = dataWeWant[open].dailyHoroscope;
+	printHoroscope ();
+	form.reset();
+}
+
+// appends DOM with user's 'daily' horosocope from userArray and reset button
+
+// if user array has value, then display this codeblock 
+function printHoroscope () {
+	let responce = document.querySelector('.responce');
+	responce.innerHTML = `<p>${horoscope}</p>`
 }
 
 
 
-// copy over boilerplate code from codepen
-
-// const form = document.getElementById("form");
-// let userArray = [];
-
-// form.addEventListener("submit", onFormSubmit);
-
-// function onFormSubmit(event) {
-// 	event.preventDefault();
-// 	const data = new FormData(event.target);
-// 	const dataObject = Object.fromEntries(data.entries());
-
-// 	//above is boiler plate code
-// 	userArray.push(dataObject);
-// 	console.log(userArray);
-// 	form.reset();
-// }
-
-
-// horoscopeData = {
-	// horoscopes: {
-	// 	date: "2023-11-30",
-	// 	astroSigns: [
-
-// loop throgh the aray
-// loop through new array 
+// reset button, will be onclick calling this function
+function resetHoroscope () {
+	userArray = [];
+}
