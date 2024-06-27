@@ -1,6 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Anek+Kannada:wght@100..800&family=Federant&display=swap');
 :root {
-	--font-h1: monospace; 
-    --font-body: sans-serif;
+	--font-h1: "Federant", serif;
+    --font-body: "Anek Kannada", sans-serif;
 	--font-color: #F4A8A5;
 	--box-color: #5A3E79;
 }
