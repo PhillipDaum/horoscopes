@@ -4,14 +4,15 @@
 /* buttons are styled the same */
 
 :root {
-	--font-h1: "monospace"; 
-    --font-body: serif;
+	--font-h1: monospace; 
+    --font-body: sans-serif;
 	--font-color: #F4A8A5;
 	--box-color: #5A3E79;
 }
 body {
     margin: 0;
     padding: 0;
+    color: var(--font-color)
 }
 main {
     background-image: url("../img/horoscope-circle.jpg");
@@ -22,7 +23,16 @@ main {
     align-items: center;
 }
 h1 {
-    color: var(--font-color)
+    font-family: var(--font-h1);
+    font-size: 2rem;
+}
+label {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+p {
+    font-family: var(--font-body);
+    font-size: 1.2rem;
 }
 /* mobile first design */
 .form-wrapper {
@@ -31,13 +41,22 @@ h1 {
     background-color: var(--box-color);
     display: flex;
     flex-direction: column;
+    border-radius: 1rem;
     /* tweek */
     justify-content: space-around;
     align-items: center;
 }
-.responce {
+.response {
     display: flex;
     flex-direction: column;
-
 }
 /* button */
+button {
+    font-size: 1.3rem;
+    color: var(--font-color);
+    background: none;
+    border: var(--font-color) solid .2rem;
+    border-radius: .5rem;
+    margin: auto;
+    padding: .5rem;
+}

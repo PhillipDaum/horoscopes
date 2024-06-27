@@ -34,14 +34,14 @@ function onFormSubmit(event) {
 
 // reset button, will be onclick calling this function
 function resetHoroscope() {
-	let responce = document.querySelector('.responce');
-	responce.innerHTML = "";
+	let response = document.querySelector('.response');
+	response.innerHTML = "";
 }
 
 // if user array has value, then display this codeblock 
 function printHoroscope() {
-	let responce = document.querySelector('.responce');
-	responce.innerHTML = `<p>${horoscope}</p>
+	let response = document.querySelector('.response');
+	response.innerHTML = `<p>${horoscope}</p>
 							<button class="reset">reset</button>`;
 	document.querySelector(".reset").addEventListener("click", resetHoroscope)
 	
