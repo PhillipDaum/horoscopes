@@ -17,7 +17,7 @@ for (let i = 0; i < dataWeWant.length; i++) {
 	document.getElementById('sign').appendChild(option);
 }
 
-// submits form data, pushes to user's array
+// submits form data, matches it in dataWeWant, reassigns horoscope variable, calls printHoroscope
 function onFormSubmit(event) {
 	event.preventDefault();
 	const data = new FormData(event.target);
@@ -30,15 +30,13 @@ function onFormSubmit(event) {
 	// form.reset();
 }
 
-// appends DOM with user's 'daily' horosocope from userArray and reset button
-
 // reset button, will be onclick calling this function
 function resetHoroscope() {
 	let response = document.querySelector('.response');
 	response.innerHTML = "";
 }
 
-// if user array has value, then display this codeblock 
+// prints horoscope with reset button
 function printHoroscope() {
 	let response = document.querySelector('.response');
 	response.innerHTML = `<p>${horoscope}</p>
