@@ -10,7 +10,7 @@ form.addEventListener("submit", onFormSubmit);
 // populates HTML form with options
 for (let i = 0; i < dataWeWant.length; i++) {
 	let option = document.createElement('option');
-	option.innerHTML = dataWeWant[i].sign;
+	option.textContent = dataWeWant[i].sign;
 	option.value = dataWeWant[i].sign;
 	option.className = dataWeWant[i].sign;
 	option.id = i;
@@ -27,20 +27,25 @@ function onFormSubmit(event) {
 	let open = door.id;
 	horoscope = dataWeWant[open].dailyHoroscope;
 	printHoroscope ();
-	form.reset();
+	// form.reset();
 }
 
 // appends DOM with user's 'daily' horosocope from userArray and reset button
 
-// if user array has value, then display this codeblock 
-function printHoroscope () {
-	let responce = document.querySelector('.responce');
-	responce.innerHTML = `<p>${horoscope}</p>`
-}
-
-
-
 // reset button, will be onclick calling this function
-function resetHoroscope () {
-	userArray = [];
+function resetHoroscope() {
+	let responce = document.querySelector('.responce');
+	responce.innerHTML = "";
 }
+
+// if user array has value, then display this codeblock 
+function printHoroscope() {
+	let responce = document.querySelector('.responce');
+	responce.innerHTML = `<p>${horoscope}</p>
+							<button class="reset">reset</button>`;
+	document.querySelector(".reset").addEventListener("click", resetHoroscope)
+	
+}
+
+
+

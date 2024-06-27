@@ -35,3 +35,9 @@ h1 {
     justify-content: space-around;
     align-items: center;
 }
+.responce {
+    display: flex;
+    flex-direction: column;
+
+}
+/* button */
